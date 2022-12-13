@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXTRA DISTRIBUIDOS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+</head>
+<body>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+        {
+             margin: 0;
+             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            }
+        body{
+            background-image: url('../views/fondo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: center;
+        }
+
+        table{
+            color: #fff;
+            font-size: 14px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            justify-content: center;
+            width: 100%;
+	        height: 10px;
+        }
+        thead{
+            background-color: rgba(243, 140, 210, 0.4);
+        }
+        td{
+            padding: 15px;
+            border-bottom: solid 1px  rgba(255, 255, 255, 0.2);
+            width: 76px;
+	        height: 10px;
+
+        }
+        td{
+            padding: 10px;
+            border-bottom: solid 1px  rgba(255, 255, 255, 0.2);
+            width: 100px;
+	        height: 10px;
+
+        }
+        tbody tr{
+            cursor: pointer;
+        }
+        tbody tr:hover {
+            background: rgba(243, 103, 199, 0.4);
+        }
+    </style>
+    <div class="container-xl mt-4 items-center container-center " >
+            <h2 class="text-center text-blue" ><b>TU EQUIPO</b></h2>
+            <div class="row">
+            <div class="col-md-9">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>PROCESADOR</td>
+                            <td>RAPIDEZ</td>
+                            <td>TIMES</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% if(dataPoke){ %>
+                            <% for(let i=0; i < dataPoke.length; i++) {%>
+                                <tr>
+                                    <td><%= dataPoke [i].model%></td>
+                                    <td><%= dataPoke [i].speed%></td>
+                                    <td>
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>Usuario</td>
+                                                    <td>nice</td>
+                                                    <td>Sistema</td>
+                                                    <td>Inactivo</td>
+                                                    <td>irq</td>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                        <tr>
+                                                            <td><%= dataPoke [i].times.user%></td>
+                                                            <td><%= dataPoke [i].times.nice%></td>
+                                                            <td><%= dataPoke [i].times.sys%></td>
+                                                            <td><%= dataPoke [i].times.idle%></td>
+                                                            <td><%= dataPoke [i].times.irq%></td>
+                                                        </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>  
+            <div class="row">
+            <div class="col-md-5">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>Almacenamiento Total</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> Total memoria disponible en MB : <%= dataTotal %></td>
+                        </tr>
+            </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>Almacenamiento Disponible</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total memoria libre en MB :<%= dataLibre %></td>
+                        </tr>
+            </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>Disco Actual</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <td>Montado en</td>
+                                            <td>Total</td>
+                                            <td>Usado</td>
+                                            <td>Disponible</td>
+                                            <td>Capacidad</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                                <tr>
+                                                    <td><%= dataDiscMounted%></td>
+                                                    <td><%= dataDiscTotall%></td>
+                                                    <td><%= dataDiscUsed%></td>
+                                                    <td><%= dataDiscAvailable%></td>
+                                                    <td><%= dataDiscCapacity%></td>
+                                                </tr>
+                            </tbody>
+                                </table>
+                            </td>
+                        </tr>
+            </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
