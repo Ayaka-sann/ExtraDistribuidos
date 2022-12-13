@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXTRA DISTRIBUIDOS</title>
+    <title>PAGINA XD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
@@ -22,7 +22,7 @@
             font-family: 'Poppins', sans-serif;
             }
         body{
-            background-image: url('../views/fondo.jpg');
+            background-image: url('../views/fondo.png');
             background-repeat: no-repeat;
             background-size: cover;
             justify-content: center;
@@ -38,18 +38,18 @@
 	        height: 10px;
         }
         thead{
-            background-color: rgba(243, 140, 210, 0.4);
+            background-color: rgba(252, 252, 252, 0.4);
         }
         td{
             padding: 15px;
-            border-bottom: solid 1px  rgba(255, 255, 255, 0.2);
+            border-bottom: solid 1px  rgba(6, 6, 6);
             width: 76px;
 	        height: 10px;
 
         }
         td{
-            padding: 10px;
-            border-bottom: solid 1px  rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-bottom: solid 1px  rgb(6, 6, 6);
             width: 100px;
 	        height: 10px;
 
@@ -58,7 +58,7 @@
             cursor: pointer;
         }
         tbody tr:hover {
-            background: rgba(243, 103, 199, 0.4);
+            background: rgb(251, 251, 251);
         }
     </style>
     <div class="container-xl mt-4 items-center container-center " >
@@ -84,7 +84,6 @@
                                             <thead>
                                                 <tr>
                                                     <td>Usuario</td>
-                                                    <td>nice</td>
                                                     <td>Sistema</td>
                                                     <td>Inactivo</td>
                                                     <td>irq</td>
@@ -93,7 +92,6 @@
                                             <tbody>
                                                         <tr>
                                                             <td><%= dataPoke [i].times.user%></td>
-                                                            <td><%= dataPoke [i].times.nice%></td>
                                                             <td><%= dataPoke [i].times.sys%></td>
                                                             <td><%= dataPoke [i].times.idle%></td>
                                                             <td><%= dataPoke [i].times.irq%></td>
